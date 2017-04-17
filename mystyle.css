@@ -1,0 +1,17 @@
+body {
+  text-align:center;
+  background-color:blue;
+  color:white;
+    }
+
+#container, #tictactoenav {
+  background-color:white;
+  color:black;
+  margin:25px;
+  padding:25px;
+  border-radius:15px;
+    }
+
+ul {
+  text-align:left;
+}
