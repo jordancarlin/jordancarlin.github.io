@@ -6,10 +6,18 @@
      var chosenSymbol = 'X';
      function chooseX(){
       chosenSymbol = 'X';
+      //alert("chosen symbol: " + chosenSymbol)
     }
      var chosenSymbol = 'O';
      function chooseO(){
       chosenSymbol = 'O';
+      //alert("chosen symbol: " + chosenSymbol)
+    }
+     
+     function makemove(divId){
+       if(document.getElementById(divId).innerHTML==""){
+       document.getElementById(divId).innerHTML=chosenSymbol;
+     }
     }
    </script>
  </head>
@@ -27,15 +35,15 @@
        Choose X or O to start!
      </div>
      <div id="tictactoe_board">
-       <div class="box" id="row1col1" onclick="makemove()"></div>
-       <div class="box" id="row1col2" onclick="makemove()"></div>
-       <div class="box" id="row1col3" onclick="makemove()"></div>
-       <div class="box" id="row2col1" onclick="makemove()"></div>
-       <div class="box" id="row2col2" onclick="makemove()"></div>
-       <div class="box" id="row2col3" onclick="makemove()"></div>
-       <div class="box" id="row3col1" onclick="makemove()"></div>
-       <div class="box" id="row3col2" onclick="makemove()"></div>
-       <div class="box" id="row3col3" onclick="makemove()"></div>
+       <div class="box" id="row1col1" onclick="makemove('row1col1')"></div>
+       <div class="box" id="row1col2" onclick="makemove('row1col2')"></div>
+       <div class="box" id="row1col3" onclick="makemove('row1col3')"></div>
+       <div class="box" id="row2col1" onclick="makemove('row2col1')"></div>
+       <div class="box" id="row2col2" onclick="makemove('row2col2')"></div>
+       <div class="box" id="row2col3" onclick="makemove('row2col3')"></div>
+       <div class="box" id="row3col1" onclick="makemove('row3col1')"></div>
+       <div class="box" id="row3col2" onclick="makemove('row3col2')"></div>
+       <div class="box" id="row3col3" onclick="makemove('row3col3')"></div>
      </div>
    </div>
   </div>
