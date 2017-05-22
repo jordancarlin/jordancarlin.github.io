@@ -8,16 +8,24 @@
       chosenSymbol = 'X';
       //alert("chosen symbol: " + chosenSymbol)
     }
-     var chosenSymbol = 'O';
      function chooseO(){
       chosenSymbol = 'O';
       //alert("chosen symbol: " + chosenSymbol)
     }
+     function switchSymbols(){
+       if(chosenSymbol == 'X'){
+         chosenSymbol = 'O'
+       }
+       else{
+         chosenSymbol = 'X'
+       }
+     }
      
      function makemove(divId){
        if(document.getElementById(divId).innerHTML==""){
        document.getElementById(divId).innerHTML=chosenSymbol;
      }
+       switchSymbols();
        checkWinner();
     }
      
@@ -40,9 +48,16 @@
          || r3c1 == r3c2 && r3c1 == r3c3 && r3c1 != ""
          || r1c1 == r2c2 && r1c1 == r3c3 && r1c1 != ""
          || r1c3 == r2c2 && r1c3 == r3c1 && r1c3 != ""){
+         switchSymbols();
          alert(chosenSymbol + " wins!")
+         location.reload();
        }
-     }
+       else if(r1c1 != "" && r1c2 != "" && r1c3 !=="" &&
+              r2c1 != "" && r2c2 != "" && r2c3 !=="" &&
+              r3c1 != "" && r3c2 != "" && r3c3 !==""){
+         alert("Cat's game!")
+       }
+         }
    </script>
  </head>
  <body>
@@ -53,11 +68,11 @@
     <a href="Projects.html">My projects</a>
    </p>
    <div id="tictactoe_game">
-     <input type="button" value="X" onclick="chooseX()"/>
+     <!--<input type="button" value="X" onclick="chooseX()"/>
      <input type="button" value="O" onclick="chooseO()"/>
-     <div id="notes">
+     <div id="notes"
        Choose X or O to start!
-     </div>
+     </div>-->
      <div id="tictactoe_board">
        <div class="box" id="row1col1" onclick="makemove('row1col1')"></div>
        <div class="box" id="row1col2" onclick="makemove('row1col2')"></div>
