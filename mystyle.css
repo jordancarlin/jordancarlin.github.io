@@ -38,3 +38,62 @@ ul {
   width:100px;
   background-color: white;
 }
+
+#hangman {
+  width: 800px;
+  height: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#drawinggroup{
+  width: 800px;
+  height: 400px;
+  background-color: pink;
+}
+
+#drawing{
+  width: 400px;
+  height: 400px;
+  float: left;
+  background-color: orange;
+}
+
+#chosenletters{
+  width: 400px;
+  height: 400px;
+  float: right;
+  background-color: blue;
+}
+
+#stick{
+  width: 5px;
+  height: 300px;
+  background-color: black;
+  position: relative;
+  left: 300px;
+  top: 50px;
+}
+
+#top{
+  background-color: black;
+  width: 125px;
+  height: 5px;
+  position: relative;
+  top: 55;
+  left: 180;
+}
+
+#bottom{
+  background-color: black;
+  height: 5px;
+  width: 200px;
+  position: relative;
+  top: 50px;
+  left: 195px;
+}
+
+#word{
+  height: 400px;
+  background-color: green;
+}
