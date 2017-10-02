@@ -111,8 +111,58 @@ ul {
   background-color: black;
   height: 75px;
   width: 75px;
-  border-radius: 100px;
+  border-radius: 50%;
   position: relative;
   top: -250px;
   left: 190px;
 }
+
+#body{
+	background-color: black;
+	width: 5px;
+	height: 125px;
+	position: relative;
+	top: -250px;
+	left: 225px;
+}
+
+#rightarm{
+	background-color: black;
+	width: 70px;
+	height: 5px;
+	position: relative;
+	top: -335px;
+	left: 218px;
+	transform: rotate(45deg);
+}
+
+#leftarm{
+	background-color: black;
+	width: 70px;
+	height: 5px;
+	position: relative;
+	top: -340px;
+	left: 167px;
+	transform: rotate(135deg);
+}
+
+#rightleg{
+	background-color: black;
+	width: 100px;
+	height: 5px;
+	position: relative;
+	top: -230px;
+	left: 212px;
+	transform: rotate(45deg);
+}
+
+#leftleg{
+	background-color: black;
+	width: 100px;
+	height: 5px;
+	position: relative;
+	top: -235px;
+	left: 143px;
+	transform: rotate(135deg);
+}
+
