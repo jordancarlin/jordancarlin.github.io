@@ -46,7 +46,7 @@ ul {
 
 #hangman {
   width: 800px;
-  height: 800px;
+  height: 850px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -100,7 +100,10 @@ ul {
 
 #word{
   height: 400px;
+  width: 750;
   background-color: green;
+  padding-top: 50px;
+  padding-left: 50px;
 }
 
 #noose{
@@ -178,11 +181,9 @@ ul {
   font-size: 30px;
 }
 
-#wordletters{
+.wordletters{
   background-color: black;
   height: 3px;
   width: 50px;
-  position: relative;
-  top: 75px;
-  left: 100px;
+  float: left;
 }
