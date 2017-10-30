@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	<script type="text/javascript" src="hangman.js"></script>
 </head>
-<body onload="generateword();">
+<body onload="generateword();startgame()">
  <div id="container">
       <p id="nav">
        <a href="index.html">Home</a>
@@ -26,7 +26,9 @@
       			<div id="leftleg"></div>
       		</div>
       		<div id="chosenletters">
-      		  <div id="letters">a</div>
+      		  <!--<div id="letters">-->
+              <div id="char"></div>  
+            <!--</div>-->
       		</div>
      	</div>
       	<div id="word"></div>
