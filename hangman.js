@@ -1,3 +1,5 @@
+//variable declarations
+
 var word = "";
 
 var list = ["dog",
@@ -11,33 +13,60 @@ var list = ["dog",
 			"tiger",
 			"lion"];
 
-var listofletters = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '];
 
+var listofletters = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '];
+	
 var index = 0;
 
+//initalize game setup
 function startgame(){
-
+	//to-do: implement
 }
 
+//handeles key press events
 document.onkeypress = function(e) {
 	e = e || window.event;
-	//get letters html
-	var lettersHTML = document.getElementById("char").innerHTML;
-	//update html wiht new key pressed
-	lettersHTML = lettersHTML + " " + String.fromCharCode(e.keyCode);
-	//update html of char
-	document.getElementById("char").innerHTML = lettersHTML;
-	//check for duplicate letters
-	listofletters[index] = String.fromCharCode(e.keyCode);
-	index = index + 1;
+	var flag = false;
+
+	//only allow lowercase letters as input
+	if (e.keyCode >= 97 && e.keyCode <= 122) {
+	
+		//get letters html
+		var lettersHTML = document.getElementById("char").innerHTML;
+		//go through the list of lessters
+		for (var i = 0; i < listofletters.length; i++) {
+			//check if letter is already in list
+			if (String.fromCharCode(e.keyCode) == listofletters[i]) {
+
+				flag = true;
+			}
+		}
+
+		if (!flag) {
+			//update html wiht new key pressed
+			lettersHTML = lettersHTML + " " + String.fromCharCode(e.keyCode);
+			
+			//update html of char
+			document.getElementById("char").innerHTML = lettersHTML;
+				
+			//add letter to array
+			listofletters[index] = String.fromCharCode(e.keyCode);
+			index = index + 1;
+		}
+	}
+	 
+	else {
+		alert("Please enter a valid lowercase letter");
+	}
 };
 
 
-
+//generates random number for word
 function randomnumber(){
 	return Math.floor(Math.random() * 10);
 }	
 
+//turns random number into word
 function generateword (){
 	word = list[randomnumber()];
 	var htmlcode = "<div class='wordletters'></div>";
@@ -48,4 +77,3 @@ function generateword (){
 		document.getElementById("word").innerHTML=wordhtml;
 	}
 }
-
