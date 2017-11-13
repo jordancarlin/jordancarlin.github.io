@@ -53,6 +53,9 @@ document.onkeypress = function(e) {
 			listofletters[index] = String.fromCharCode(e.keyCode);
 			index = index + 1;
 		}
+		else{
+			alert("You already tried that letter, please try again.")
+		}
 	}
 	 
 	else {
