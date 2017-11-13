@@ -18,6 +18,8 @@ var listofletters = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '
 	
 var index = 0;
 
+var htmlcode = "<div class='wordletters'></div>";
+
 //initalize game setup
 function startgame(){
 	//to-do: implement
@@ -26,8 +28,47 @@ function startgame(){
 //handeles key press events
 document.onkeypress = function(e) {
 	e = e || window.event;
-	var flag = false;
+	//handles letters being guessed
+	guessletters(e);
+	checkword(e);
+};
 
+function checkword(e){
+	var letter = String.fromCharCode(e.keyCode);
+	var correctletterhtml = "";
+	for (var i = 0; i < word.length; i++) {
+		if(letter == word.charAt(i)) {
+			//alert("you guessed correctly " + letter)
+			correctletterhtml =+ "<div class='wordletters'>" + letter + "</div>";
+		}
+		else{
+			correctletterhtml =+ "<div class='wordletters'></div>";		
+		}
+
+	}
+	document.getElementById("word").innerHTML = correctletterhtml;
+}
+
+
+//generates random number for word
+function randomnumber(){
+	return Math.floor(Math.random() * 10);
+}	
+
+//gnerates random word for list
+function generateword (){
+	word = list[randomnumber()];
+	var wordhtml = document.getElementById("word").innerHTML
+	//i++ ----> i = i + 1
+	for(var i = 0; i < word.length; i++){
+		wordhtml = wordhtml+ htmlcode
+		document.getElementById("word").innerHTML=wordhtml;
+	}
+}
+
+//handles guessing of letters
+function guessletters(e){
+	var flag = false;
 	//only allow lowercase letters as input
 	if (e.keyCode >= 97 && e.keyCode <= 122) {
 	
@@ -60,23 +101,5 @@ document.onkeypress = function(e) {
 	 
 	else {
 		alert("Please enter a valid lowercase letter");
-	}
-};
-
-
-//generates random number for word
-function randomnumber(){
-	return Math.floor(Math.random() * 10);
-}	
-
-//turns random number into word
-function generateword (){
-	word = list[randomnumber()];
-	var htmlcode = "<div class='wordletters'></div>";
-	var wordhtml = document.getElementById("word").innerHTML
-	//i++ ----> i = i + 1
-	for(var i = 0; i < word.length; i++){
-		wordhtml = wordhtml+ htmlcode
-		document.getElementById("word").innerHTML=wordhtml;
 	}
 }
