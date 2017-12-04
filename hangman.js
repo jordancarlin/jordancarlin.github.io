@@ -20,6 +20,8 @@ var index = 0;
 
 var htmlcode = "<div class='wordletters'></div>";
 
+var correctletters = "";
+
 //initalize game setup
 function startgame(){
 	//to-do: implement
@@ -31,24 +33,42 @@ document.onkeypress = function(e) {
 	//handles letters being guessed
 	guessletters(e);
 	checkword(e);
+	drawword(e);
 };
 
+//check for each letter in the word
+//if gueessd correctly, correctletters is updated
 function checkword(e){
 	var letter = String.fromCharCode(e.keyCode);
-	var correctletterhtml = "";
 	for (var i = 0; i < word.length; i++) {
 		if(letter == word.charAt(i)) {
 			//alert("you guessed correctly " + letter)
-			correctletterhtml =+ "<div class='wordletters'>" + letter + "</div>";
+			correctletters = correctletters + letter;
 		}
 		else{
-			correctletterhtml =+ "<div class='wordletters'></div>";		
+			correctletters = correctletters + "-";
 		}
+
+	}
+}
+
+//getrs the array of correctly guessed letters
+//draws the html of word guessed so far
+function drawword(){
+		
+		var correctletterhtml = "";
+
+		for (var i = 0; i < correctletters.length; i++) {
+			if(word.charAt(i) == correctletters.charAt(i)) {
+				correctletterhtml = correctletterhtml + "<div class='wordletters'>" + correctletters.charAt(i) + "</div>";
+			}
+			else{
+				correctletterhtml = correctletterhtml + "<div class='wordletters'></div>";		
+			}
 
 	}
 	document.getElementById("word").innerHTML = correctletterhtml;
 }
-
 
 //generates random number for word
 function randomnumber(){
